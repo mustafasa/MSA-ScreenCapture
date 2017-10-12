@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.os.Environment;
 import android.os.Looper;
+import android.util.Log;
 import android.view.View;
 
 import java.io.File;
@@ -12,9 +13,8 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
 
@@ -52,6 +52,10 @@ public final class CaptureScreenShot {
         View scrView = activity.getWindow().getDecorView().getRootView();
         scrView.setDrawingCacheEnabled(true);
         Bitmap bitmap = getBitmap(activity);
+        if(bitmap==null){
+            Log.e(activity.getClass().getName(),"you try to capture before view is ready.");
+            return false;
+        }
         scrView.setDrawingCacheEnabled(false);
         try {
             File imageFile = new File(iPath);
@@ -125,8 +129,8 @@ public final class CaptureScreenShot {
     }
 
     private static String createImageFileName(String fileName) {
-        String date = DateFormat.getDateInstance().format(
-                new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime()));
+        String date = new SimpleDateFormat("yyyyMMdd_HHmmss")
+                .format(new Date());
         if (fileName == null) {
             return date.concat(".png");
         }
