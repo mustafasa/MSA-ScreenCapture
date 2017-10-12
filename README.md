@@ -12,7 +12,7 @@ window(Dialog-box, Pop-up window, Toaster etc).
 6.select Module Dependency > select :CaptureLibrary
 7.Wait for build to complete.
 Tada!! Library is ready to use.
-8.you need to add these permission in manifest in order to image file in sdcard.
+8.you need to add these permission in manifest in order to save image file in sdcard.
  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
