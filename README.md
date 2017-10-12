@@ -35,7 +35,7 @@ Finally exciting part, Let's utilied library in activity.
  
 //if you loop through arraylist, it provide each element information
 //eg:
- ScreenIdentifier firstUIElement= dd.get(0);
+ ScreenIdentifier firstUIElement= identifier.get(0);
  firstUIElement.getUiIdentifier();
  firstUIElement.getUiHeight();
 ///and many more attributes are available..... 
