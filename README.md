@@ -71,6 +71,7 @@ Sky is the limit it can be utilize in many ways.
 ## Sample App
 
 Yes, I've created sample application utilzing screenCapture library in both activity and UI test case.
+Please check sample code, after fetching soure code.
 
 
 ## License
