@@ -75,6 +75,15 @@ developer what they can utilize this library for.
 Yes, I've created sample application utilzing screenCapture library in both activity and UI test case.
 Please check sample code, after fetching soure code.
 
+## Tip
+
+To download screenshots from Mobile device to computer, utilize adb. Open command prompt:
+```
+adb pull sdcard/MSA 
+//or
+adb pull sdcard/Given_Folder_name
+```
+
 
 ## License
 
