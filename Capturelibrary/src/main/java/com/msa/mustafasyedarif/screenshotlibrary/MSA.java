@@ -3,6 +3,7 @@ package com.msa.mustafasyedarif.screenshotlibrary;
 import android.app.Activity;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import static com.msa.mustafasyedarif.screenshotlibrary.CaptureScreenIdentifier.getScreenIdentifiers;
 import static com.msa.mustafasyedarif.screenshotlibrary.CaptureScreenShot.takeScreenshot;
@@ -24,7 +25,7 @@ public final class MSA {
      * @return <code>true</code> if the screen capture was successful, <code>false</code>
      * otherwise.
      */
-    public static boolean CaptureScreenShot(Activity activity, String screenShotName) {
+    public static boolean captureScreenShot(Activity activity, String screenShotName) {
         return takeScreenshot(activity, screenShotName, folderName);
     }
 
@@ -36,7 +37,7 @@ public final class MSA {
      * @return <code>true</code> if the screen capture was successful, <code>false</code>
      * otherwise.
      */
-    public static boolean CaptureScreenShot(Activity activity) {
+    public static boolean captureScreenShot(Activity activity) {
         return takeScreenshot(activity, null, folderName);
     }
 
@@ -46,7 +47,7 @@ public final class MSA {
      * @param activity The {@link Class} of the Activity.
      * @return {@link <ArrayList<ScreenIdentifier>} of all identifier on current activity.
      */
-    public static ArrayList<ScreenIdentifier> CaptureScreenIdentifier(Activity activity) {
+    public static List<ScreenIdentifier> captureScreenIdentifier(Activity activity) {
         return getScreenIdentifiers(activity);
     }
 

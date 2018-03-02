@@ -12,7 +12,7 @@ import android.view.View;
 import com.msa.mustafasyedarif.screenshotlibrary.MSA;
 import com.msa.mustafasyedarif.screenshotlibrary.ScreenIdentifier;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     final String TAG = "MSA";
@@ -39,16 +39,16 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
         //This method will create screenshot of current view, returns boolean.
-        boolean success = MSA.CaptureScreenShot(this);
+        boolean success = MSA.captureScreenShot(this);
         Log.d(TAG, String.valueOf(success));
         //This method will create screenshot of current view with desire name.
         //Note: If used repeated name,results in overriding existing images.
-        boolean successAgain = MSA.CaptureScreenShot(this, "desirename");
+        boolean successAgain = MSA.captureScreenShot(this, "desirename");
         Log.d(TAG, String.valueOf(successAgain));
 
         //This method capture meta-data of UI elemnts and return back with arraylist of
         // screenIdentifier.
-        ArrayList<ScreenIdentifier> identifier = MSA.CaptureScreenIdentifier(this);
+         List<ScreenIdentifier> identifier = MSA.captureScreenIdentifier(this);
 
         //if you loop through arraylist, it provide each element information
         //eg:

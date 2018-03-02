@@ -6,13 +6,11 @@ import android.support.test.runner.AndroidJUnit4;
 import com.msa.mustafasyedarif.screenshotlibrary.MSA;
 import com.msa.mustafasyedarif.screenshotlibrary.ScreenIdentifier;
 
-import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.List;
 
 /**
  * Created by arifm2 on 10/18/2017.
@@ -32,14 +30,14 @@ public class MainActivityTest {
         Thread.sleep(750);
 
         //This method will create screenshot of current view, returns boolean.
-        boolean success= MSA.CaptureScreenShot(intentsTestRule.getActivity());
+        boolean success= MSA.captureScreenShot(intentsTestRule.getActivity());
 
         //This method will create screenshot of current view with desire name.
         //Note: If used repeated name,results in overriding existing images.
-        boolean success2=MSA.CaptureScreenShot(intentsTestRule.getActivity(),"desirename");
+        boolean success2=MSA.captureScreenShot(intentsTestRule.getActivity(),"desirename");
 
         //This method capture meta-data of UI elemnts and return back with arraylist of screenIdentifier.
-        ArrayList<ScreenIdentifier> identifier= MSA.CaptureScreenIdentifier(intentsTestRule.getActivity());
+        List<ScreenIdentifier> identifier= MSA.captureScreenIdentifier(intentsTestRule.getActivity());
     }
 
 }

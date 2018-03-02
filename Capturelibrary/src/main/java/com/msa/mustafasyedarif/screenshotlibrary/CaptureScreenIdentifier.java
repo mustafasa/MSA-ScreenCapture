@@ -6,6 +6,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import static com.msa.mustafasyedarif.screenshotlibrary.CaptureRootView.getRootViews;
 
@@ -27,8 +28,8 @@ public final class CaptureScreenIdentifier {
      * @return {@link <ArrayList<ScreenIdentifier>} of all identifier on current activity.
      * otherwise.
      */
-    protected static ArrayList<ScreenIdentifier> getScreenIdentifiers(Activity activity) {
-        ArrayList<ScreenIdentifier> currentScreenIdentifiers = new ArrayList<>();
+    protected static List<ScreenIdentifier> getScreenIdentifiers(Activity activity) {
+        List<ScreenIdentifier> currentScreenIdentifiers = new ArrayList<>();
         for (CaptureRootView.ViewRootData rootViews : getRootViews(activity)) {
             if (rootViews.isDialog()) {
                 ViewGroup viewgroup = (ViewGroup) rootViews.getView();
@@ -44,7 +45,7 @@ public final class CaptureScreenIdentifier {
     }
 
     private static void setScreenIdentifierFromViewgroup
-            (ViewGroup viewgroup, ArrayList<ScreenIdentifier> currentScreenIdentifiers) {
+            (ViewGroup viewgroup, List<ScreenIdentifier> currentScreenIdentifiers) {
         for (int i = 0; i < viewgroup.getChildCount(); i++) {
             View view = viewgroup.getChildAt(i);
 
@@ -58,7 +59,7 @@ public final class CaptureScreenIdentifier {
         }
     }
 
-    private static void setScreenIdentifierFromView(View view, ArrayList<ScreenIdentifier>
+    private static void setScreenIdentifierFromView(View view, List<ScreenIdentifier>
             currentScreenIdentifiers) {
         ScreenIdentifier screenIdentifiers = new ScreenIdentifier();
         screenIdentifiers.setUiWidth(view.getWidth());
