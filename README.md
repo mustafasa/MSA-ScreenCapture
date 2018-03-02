@@ -24,14 +24,14 @@ Finally exciting part, Let's utilied library in activity.
 //If called before the view is ready result's as false.
 
 //This method will create screenshot of current view, returns boolean.
-  boolean success= MSA.CaptureScreenShot(this);
+  boolean success= MSA.captureScreenShot(this);
   
 //This method will create screenshot of current view with desire name.
 //Note: If used repeated name,results in overriding existing images.
-  boolean success=MSA.CaptureScreenShot(this,"desirename");   
+  boolean success=MSA.captureScreenShot(this,"desirename");   
   
 //This method capture meta-data of UI elemnts and return back with arraylist of screenIdentifier.
- ArrayList<ScreenIdentifier> identifier= MSA.CaptureScreenIdentifier(this);
+ ArrayList<ScreenIdentifier> identifier= MSA.captureScreenIdentifier(this);
  
 //if you loop through arraylist, it provide each element information
 //eg:
@@ -59,14 +59,14 @@ developer what they can utilize this library for.
         Thread.sleep(750);
 
         //This method will create screenshot of current view, returns boolean.
-        boolean success= MSA.CaptureScreenShot(intentsTestRule.getActivity());
+        boolean success= MSA.captureScreenShot(intentsTestRule.getActivity());
 
         //This method will create screenshot of current view with desire name.
         //Note: If used repeated name,results in overriding existing images.
-        boolean success2=MSA.CaptureScreenShot(intentsTestRule.getActivity(),"desirename");
+        boolean success2=MSA.captureScreenShot(intentsTestRule.getActivity(),"desirename");
 
         //This method capture meta-data of UI elemnts and return back with arraylist of screenIdentifier.
-        ArrayList<ScreenIdentifier> identifier= MSA.CaptureScreenIdentifier(intentsTestRule.getActivity());
+        ArrayList<ScreenIdentifier> identifier= MSA.captureScreenIdentifier(intentsTestRule.getActivity());
     }
     
 ```
